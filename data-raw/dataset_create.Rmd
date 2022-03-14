@@ -5,7 +5,7 @@ date: "11/18/2021"
 output: html_document
 dataset:
   citation:
-      title: "Social Data Commons: Emergency Medical Services (EMS) Access Scores"
+      title: "Social Data Commons: Health, Behavior, Diet: Emergency Medical Services (EMS) Access Scores"
       subtitle: ""
       dsDescriptionValue: "Access Scores for Emergency Medical Services (EMS) located in the National Capital Region NCR given by the Floating Catchment Areas"
       subject: "Social Sciences (Ex: Education, Politics, Sociology, Economics, Psychology)"
