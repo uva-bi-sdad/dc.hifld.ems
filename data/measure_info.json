@@ -1,5 +1,5 @@
 {
-    "access_scores_ems:ems_near_10_median": {
+  "access_scores_ems:ems_near_10_median": {
     "category": "Health",
     "measure_table": "dc_health_behavior_diet.va_hdcttr_sdad_2021_access_scores_ems",
     "full_name": "access_scores_ems:ems_near_10_median",
@@ -10,7 +10,7 @@
     "short_description": "Median drive time (minutes) to the ten closest emergency medical services facilities",
     "long_description": "Median drive time in minutes to the ten closest emergency medical services facilities. Facility location data were collected from the Homeland Infrastructure Foundation-Level Data (HIFLD) repository. Drive times were computed using Open Source Routing Machine (Using roads for year 2021).",
     "statement": "The median drive time to the ten closest emergency medical service facilities to {features.name} is {value}.",
-    "equity_category" : "Availability",
+    "equity_category": "Availability",
     "sources": [
       {
         "name": "Homeland Infrastructure Foundation-Level Data (HIFLD)",
@@ -30,7 +30,28 @@
     "short_description": "Count of emergency medical services facilities based on facility locations",
     "long_description": "Count of emergency medical services facilities based on facility locations. Location data was collected from the Homeland Infrastructure Foundation-Level Data (HIFLD) repository.",
     "statement": "There are {value} emergency medical services facilities in {features.name}.",
-    "equity_category" : "Availability",
+    "equity_category": "Availability",
+    "sources": [
+      {
+        "name": "Homeland Infrastructure Foundation-Level Data (HIFLD)",
+        "date_accessed": 2021,
+        "url": "https://hifld-geoplatform.opendata.arcgis.com/"
+      }
+    ]
+  },
+  "access_scores_ems:ems_3sfca": {
+    "category": "Health",
+    "measure_table": "dc_health_behavior_diet.va_hdcttr_sdad_2021_ems_access_scores",
+    "full_name": "access_scores_ems:ems_3sfca",
+    "measure": "ems_3sfca",
+    "type": "index",
+    "short_name": "Emergency medical services geographic availability",
+    "long_name": "Emergency medical services geographic availability (3-step floating catchment areas)",
+    "short_description": "Index of emergency medical services availability based on supply and demand of facilities",
+    "long_description": "Emergency medical services availability based on 3-step floating catchment areas. This method is an aggregation of facilities per population ratios weighted by distance or travel time in each catchment area (area within which a facility is accessible). Weights are defined for the demand for facilities (adult population).",
+    "statement": "The emergency medical services availability for {features.name} is {value}.",
+    "equity_category": "Availability",
+    "citations": ["lou04", "lou09", "lou03", "saxon20"],
     "sources": [
       {
         "name": "Homeland Infrastructure Foundation-Level Data (HIFLD)",
