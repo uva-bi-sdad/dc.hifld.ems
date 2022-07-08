@@ -1,0 +1,120 @@
+{
+  "_references": {
+    "wan12": {
+      "id": "wan12",
+      "author": [
+        {
+          "given": "Neng",
+          "family": "Wan"
+        },
+        {
+          "given": "Bin",
+          "family": "Zou"
+        },
+        {
+          "given": "Troy",
+          "family": "Sternberg"
+        }
+      ],
+      "year": 2012,
+      "title": "A three-step floating catchment area method for analyzing spatial access to health services",
+      "journal": "International Journal of Geographical Information Science",
+      "volume": "26",
+      "page": "1073–1089",
+      "doi": "10.1080/13658816.2011.624987"
+    },
+    "bii21": {
+      "id": "bii21",
+      "author": [
+        {
+          "family": "Biocomplexity Institute and Initiative"
+        }
+      ],
+      "year": 2021,
+      "title": "catchment: Calculate spatial access and availability metrics",
+      "version": "0.0.1",
+      "url": "https://github.com/uva-bi-sdad/catchment"
+    }
+  },
+  "hifld:hospitals": {
+    "category": "Health",
+    "full_name": "hifld:hospitals",
+    "measure": "hospitals",
+    "type": "count",
+    "short_name": "hospitals",
+    "long_name": "number of hospital",
+    "short_description": "Number hospitals within the region.",
+    "long_description": "The number of hospital within each region, as collected from various government sources by Oak Ridge National Laboratory.",
+    "statement": "There are {value} hospitals in {features.name}.",
+    "equity_category": "Accessibility",
+    "sources": [
+      {
+        "name": "Homeland Infrastructure Foundation-Level Data",
+        "location": "HIFLD Open Portal > Public Health > Hospitals",
+        "location_url": "https://hifld-geoplatform.opendata.arcgis.com/datasets/geoplatform::hospitals/about",
+        "date_accessed": 2022,
+        "url": "https://hifld-geoplatform.opendata.arcgis.com"
+      }
+    ]
+  },
+  "hifld:hospital_beds_per_100k": {
+    "category": "Health",
+    "full_name": "hifld:hospital_beds_per_100k",
+    "measure": "hospital_beds_per_100k",
+    "type": "per 100k",
+    "short_name": "hospital beds",
+    "long_name": "hospital beds per 100k people",
+    "short_description": "Number hospital beds per 100k people.",
+    "long_description": "The number of hospital beds per 100k people, based on 3-step floating catchment areas defined by distance. Catchment areas were calculated using (a) hospitals, with supply values as bed counts, as collected from various government sources by Oak Ridge National Laboratory [for hospitals with no bed counts, bed counts are median bed counts across all other hospitals in the included regions], (b) Census block groups, with demand values as the total population as reported in the American Community Survey 5-year summaries, and (c) distances between hospital locations and block group centroids, weighted by a Gaussian function with a scaling parameter set to 18, as calculated by the catchment R package.",
+    "statement": "There are {value} hospital beds per 100k people in {features.name}.",
+    "equity_category": "Accessibility",
+    "citations": ["wan12", "bii21"],
+    "sources": [
+      {
+        "name": "Homeland Infrastructure Foundation-Level Data",
+        "location": "HIFLD Open Portal > Public Health > Hospitals",
+        "location_url": "https://hifld-geoplatform.opendata.arcgis.com/datasets/geoplatform::hospitals/about",
+        "date_accessed": 2022,
+        "url": "https://hifld-geoplatform.opendata.arcgis.com"
+      },
+      {
+        "name": "American Community Survey",
+        "location": "data/5_year_seq_by_state",
+        "location_url": "https://www2.census.gov/programs-surveys/acs/summary_file",
+        "date_accessed": 2022,
+        "url": "https://www.census.gov/programs-surveys/acs.html"
+      },
+      {
+        "name": "Open Source Routing Machine",
+        "date_accessed": 2022,
+        "url": "http://project-osrm.org"
+      }
+    ]
+  },
+  "hifld:hospitals_min_drivetime": {
+    "category": "Health",
+    "full_name": "hifld:hospitals_min_drivetime",
+    "measure": "hospitals_min_drivetime",
+    "type": "minutes",
+    "short_name": "hospital drive time",
+    "long_name": "drive time to nearest hospital",
+    "short_description": "Drive time to the nearest hospital.",
+    "long_description": "Minimal drive time to a hospital from the Census block group centroid, as calculated by the Open Source Routing Machine in 2022. Hospital locations are from various government sources, collected by Oak Ridge National Laboratory. All distances are calculated at the block group level, then averaged up to higher-level geographies.",
+    "statement": "It takes {value} to drive to a hospital from {features.name}'s block group centroids on average.",
+    "equity_category": "Accessibility",
+    "sources": [
+      {
+        "name": "Homeland Infrastructure Foundation-Level Data",
+        "location": "HIFLD Open Portal > Public Health > Hospitals",
+        "location_url": "https://hifld-geoplatform.opendata.arcgis.com/datasets/geoplatform::hospitals/about",
+        "date_accessed": 2022,
+        "url": "https://hifld-geoplatform.opendata.arcgis.com"
+      },
+      {
+        "name": "Open Source Routing Machine",
+        "date_accessed": 2022,
+        "url": "http://project-osrm.org"
+      }
+    ]
+  }
+}
